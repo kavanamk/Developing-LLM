@@ -1,0 +1,33 @@
+import torch
+
+a = torch.randn((2, 3, 4), dtype=torch.float)
+
+print("The dtype of tensor a is {}.\n".format(a.dtype))
+
+print("The size of tensor a is {}.".format(a.size()))
+print("The shape of tensor a is {}.\n".format(a.shape))
+
+print("The dims of tensor a is {}.".format(a.dim()))
+print("The dims of tensor a is {}.\n".format(a.ndim))
+
+print("The number of element of tensor a is {}.\n".format(a.numel()))
+
+print("The GPU is {}.\n".format(a.is_cuda))
+
+print("The device is {}.".format(a.device))
+
+OUTPUT:
+
+The dtype of tensor a is torch.float32.
+
+The size of tensor a is torch.Size([2, 3, 4]).
+The shape of tensor a is torch.Size([2, 3, 4]).
+
+The dims of tensor a is 3.
+The dims of tensor a is 3.
+
+The number of element of tensor a is 24.
+
+The GPU is False.
+
+The device is cpu.
