@@ -1,0 +1,33 @@
+import torch
+
+# Create a tensor with 1*10 shape with random value between 0 and 1
+r0 = torch.rand(10)
+print(r0)
+print("************************************************")
+# Create a tensor with 10*1 shape with random value between 0 and 1
+r1 = torch.rand((10, 1))
+print(r1)
+print("************************************************")
+# Create a tensor with 2*2 shape with random value between 0 and 1
+r2 = torch.rand((2, 2))
+print(r2)
+print("************************************************")
+# Create a tensor with 2*2 shape with random value from a normal distribution.
+r3 = torch.randn((2,2))
+print(r3)
+print("************************************************")
+# Create an integer type tensor with 3*3 shape with random value between 0 and 10.
+r4 = torch.randint(high=10, size=(3, 3))
+print(r4)
+print("************************************************")
+# Create an integer type tensor with 3*3 shape with random value between 5 and 10.
+r5 = torch.randint(low=5, high=10, size=(3, 3))
+print(r5)
+
+
+
+PyTorch provides some useful functions to create a tensor with a random value.
+
+rand(): It creates a tensor filled with random numbers from a uniform distribution. The parameter is a sequence of integers defining the shape of the output tensor. It can be a variable number of arguments or a collection like a list or a tuple.
+randn(): It creates a tensor filled with random numbers from a normal distribution with mean 0 and variance 1. The parameter is the same as the rand().
+randint(): Unlike the functions above, this function creates a tensor with integer values with low, high and size parameters. low means the lowest value, it’s optional and the default value is 0. high means the highest value, and size is a tuple that defines the shape of the tensor.
