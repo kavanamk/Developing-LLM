@@ -1,0 +1,13 @@
+import torch
+
+# Create a identity tensor with 3*3 shape.
+eys = torch.eye(3)
+print(eys)
+
+# Create a tensor with 2*2 shape whose values are all 1.
+ones = torch.ones((2, 2))
+print(ones)
+
+# Create a tensor with 3*3 shape whose values are all 0.
+zeros = torch.zeros((3, 3))
+print(zeros)
