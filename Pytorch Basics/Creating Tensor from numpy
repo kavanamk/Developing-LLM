@@ -1,0 +1,10 @@
+#from numpy
+
+import torch
+import numpy as np
+
+na = np.array([1, 2, 3])
+a = torch.tensor(na)
+b = torch.from_numpy(na)
+print(a)
+print(b)
