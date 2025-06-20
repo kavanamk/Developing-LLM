@@ -1,0 +1,23 @@
+import torch
+
+a = torch.ones((3, 3))
+print("The original shape of a is {}".format(a.shape))
+print("The original a tensor is {}".format(a))
+
+a = torch.unsqueeze(a, dim=1)
+print("The new shape of a is {}".format(a.shape))
+print("The new tensor is {}".format(a))
+
+
+Output
+1.26s
+The original shape of a is torch.Size([3, 3])
+The original a tensor is tensor([[1., 1., 1.],
+        [1., 1., 1.],
+        [1., 1., 1.]])
+The new shape of a is torch.Size([3, 1, 3])
+The new tensor is tensor([[[1., 1., 1.]],
+
+        [[1., 1., 1.]],
+
+        [[1., 1., 1.]]])
