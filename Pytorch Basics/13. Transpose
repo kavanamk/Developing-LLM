@@ -1,0 +1,44 @@
+import torch
+
+a = torch.ones((2, 4))
+print("The original shape of a is {}".format(a.shape))
+print("The original tensor a is {}".format(a))
+
+a = torch.transpose(a, 0, 1)
+print("The new shape of a is {}".format(a.shape))
+print("The new tensor a is {}".format(a))
+
+b = torch.ones((2, 4, 2))
+print("The original shape of b is {}".format(b.shape))
+print("The original tensor b is {}".format(b))
+
+b = torch.transpose(b, 1, 2)
+print("The new shape of b is {}".format(b.shape))
+print("The new tensor b is {}".format(b))
+
+Output
+1.23s
+The original shape of a is torch.Size([2, 4])
+The original tensor a is tensor([[1., 1., 1., 1.],
+        [1., 1., 1., 1.]])
+The new shape of a is torch.Size([4, 2])
+The new tensor a is tensor([[1., 1.],
+        [1., 1.],
+        [1., 1.],
+        [1., 1.]])
+The original shape of b is torch.Size([2, 4, 2])
+The original tensor b is tensor([[[1., 1.],
+         [1., 1.],
+         [1., 1.],
+         [1., 1.]],
+
+        [[1., 1.],
+         [1., 1.],
+         [1., 1.],
+         [1., 1.]]])
+The new shape of b is torch.Size([2, 2, 4])
+The new tensor b is tensor([[[1., 1., 1., 1.],
+         [1., 1., 1., 1.]],
+
+        [[1., 1., 1., 1.],
+         [1., 1., 1., 1.]]])
