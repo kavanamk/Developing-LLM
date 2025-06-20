@@ -1,0 +1,30 @@
+
+The mask tensor is BoolTensor, which identifies which elements are chosen. The shape of the mask tensor and the original tensor doesn’t need to match, but they must be broadcastable.
+
+A mask is quite similar to a bitmasking in C and C++ bit operations. Select the element when the corresponding location is True in the mask.
+
+import torch
+
+a = torch.arange(1, 10).reshape((3, 3))
+
+mask = torch.BoolTensor([[True, False, True],
+                        [False, False, True],
+                        [True, False, False]])
+print("The mask tensor is: \n{}".format(mask))
+print("The original tensor is: \n{}".format(a))
+result = torch.masked_select(a, mask)
+print("The result is {}".format(result))
+
+
+Output
+
+
+The mask tensor is: 
+tensor([[ True, False,  True],
+        [False, False,  True],
+        [ True, False, False]])
+The original tensor is: 
+tensor([[1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]])
+The result is tensor([1, 3, 6, 7])
