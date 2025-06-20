@@ -1,0 +1,32 @@
+import torch
+
+a = torch.arange(1, 10).reshape((3, 3))
+# The output
+# tensor([[1, 2, 3],
+#         [4, 5, 6],
+#         [7, 8, 9]])
+print("The original tensor")
+print(a)
+
+print("Select only one element")
+print(a[1,1])
+
+print("Select the second column")
+print(a[:, 1])
+
+print("Select the second row.")
+print(a[1, :])
+
+
+Output
+
+The original tensor
+tensor([[1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]])
+Select only one element
+tensor(5)
+Select the second column
+tensor([2, 5, 8])
+Select the second row.
+tensor([4, 5, 6])
