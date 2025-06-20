@@ -1,0 +1,8 @@
+The Tensor class has the method to(), which can cast tensors into different types. To cast a tensor, call its to() method and pass the dtype as the argument, as shown in the code below.
+
+Notice: The to() cast is not an in-place operation, which means the original tensor wouldn’t be modified. It would return a new tensor with the new type.
+
+Output
+0.98s
+The dtype for b is torch.float32
+The dtype for c is torch.int64
