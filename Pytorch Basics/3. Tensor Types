@@ -1,0 +1,13 @@
+import torch
+
+a = torch.tensor([1, 2, 3])
+print("The dtype for a is {}".format(a.dtype))
+
+b = torch.tensor([1, 2, 3], dtype=torch.float)
+print("The dtype for b is {}".format(b.dtype))
+
+output:
+
+1.41s
+The dtype for a is torch.int64
+The dtype for b is torch.float32
