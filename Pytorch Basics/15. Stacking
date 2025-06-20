@@ -1,0 +1,27 @@
+
+
+import torch
+
+a = torch.randn((2, 2))
+b = torch.randn((2, 2))
+print("The original tesnor a is\n {}".format(a))
+print("The original tesnor b is\n {}".format(a))
+result = torch.stack((a, b), dim=1)
+print("The shape of result is {}".format(result.shape))
+print("The new tensor is\n {}".format(result))
+
+Output
+0.94s
+The original tesnor a is
+ tensor([[ 0.0256,  0.1524],
+        [ 0.5402, -1.7147]])
+The original tesnor b is
+ tensor([[ 0.0256,  0.1524],
+        [ 0.5402, -1.7147]])
+The shape of result is torch.Size([2, 2, 2])
+The new tensor is
+ tensor([[[ 0.0256,  0.1524],
+         [-0.2111, -2.6021]],
+
+        [[ 0.5402, -1.7147],
+         [-0.4284, -0.1121]]])
