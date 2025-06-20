@@ -1,0 +1,11 @@
+
+PyTorch provides some useful functions to create tensors with the specified type.
+
+FloatTensor: This function creates tensors with torch.float32 type.
+IntTensor: This function creates tensors with torch.int32 type.
+DoubleTensor: This function creates tensors with torch.float64 type.
+LongTensor: This function creates tensors with torch.long type.
+
+d = torch.FloatTensor([1, 2, 3])
+
+e = torch.IntTensor([1, 2, 3])
