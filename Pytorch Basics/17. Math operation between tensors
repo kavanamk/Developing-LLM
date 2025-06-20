@@ -1,0 +1,23 @@
+import torch
+
+a = torch.tensor([1, 2, 3])
+b = torch.tensor([2, 4, 6])
+
+c = a * b
+print("The multiple between a an b is {}".format(c))
+
+c = a.mul(b)
+print("The multiple between a an b is {}".format(c))
+
+e = torch.tensor([[1, 2], [3, 4]])
+f = torch.tensor([[2, 2], [2, 2]])
+
+g = e*f 
+print("The multiple between e an f is {}".format(g))
+
+Output
+1.27s
+The multiple between a an b is tensor([ 2,  8, 18])
+The multiple between a an b is tensor([ 2,  8, 18])
+The multiple between e an f is tensor([[2, 4],
+        [6, 8]])
