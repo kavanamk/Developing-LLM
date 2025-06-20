@@ -1,0 +1,27 @@
+import torch
+
+a = torch.arange(1, 9)
+print("The original tensor\n.")
+print(a)
+
+b = torch.reshape(a, (2, 4))
+print("The reshape tensor with shape (2, 4)\n")
+print(b)
+
+c = torch.reshape(a, (2, -1))
+print("The reshape tensor with shape (2, -1)\n")
+print(c)
+
+Output
+1.18s
+The original tensor
+.
+tensor([1, 2, 3, 4, 5, 6, 7, 8])
+The reshape tensor with shape (2, 4)
+
+tensor([[1, 2, 3, 4],
+        [5, 6, 7, 8]])
+The reshape tensor with shape (2, -1)
+
+tensor([[1, 2, 3, 4],
+        [5, 6, 7, 8]])
