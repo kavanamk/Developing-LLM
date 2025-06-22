@@ -1,0 +1,9 @@
+import numpy as np
+import torch
+
+dummy_array = np.array([1, 2, 3])
+dummy_tensor = torch.as_tensor(dummy_array)
+# Modifies the numpy array
+dummy_array[1] = 0
+# Using numpy function to convert PyTorch tensor to Numpy array
+print(dummy_tensor.numpy())
