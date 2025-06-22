@@ -1,0 +1,35 @@
+# Step 0 - initializes parameters "b" and "w" randomly
+np.random.seed(42)
+b = np.random.randn(1)                                    # 1)
+w = np.random.randn(1)                                    # 1)
+
+print("# b and w after initialization")
+print(b, w)
+
+# Sets learning rate - this is "eta" ~ the "n"-like Greek letter 
+lr = 0.1                                                  # 2)
+# Defines number of epochs
+n_epochs = 1000                                           # 2)
+
+for epoch in range(n_epochs):
+    # Step 1 - computes model's predicted output - forward pass
+    yhat = b + w * x_train                                # 3)
+    
+    # Step 2 - computes the loss
+    # We are using ALL data points, so this is BATCH gradient 
+    # descent. How wrong is our model? That's the error! 
+    error = (yhat - y_train)                              # 4)
+    # It is a regression, so it computes mean squared error (MSE)
+    loss = (error ** 2).mean()                            # 4)
+    
+    # Step 3 - computes gradients for both "b" and "w" parameters
+    b_grad = 2 * error.mean()                             # 5)
+    w_grad = 2 * (x_train * error).mean()                 # 5)
+    
+    # Step 4 - updates parameters using gradients and 
+    # the learning rate
+    b = b - lr * b_grad                                   # 6)
+    w = w - lr * w_grad                                   # 6)
+
+print("# b and w after our gradient descent")    
+print(b, w)
