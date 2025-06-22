@@ -1,0 +1,13 @@
+ import torch
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# THIRD
+# We can either create regular tensors and send them to 
+# the device (as we did with our data)
+torch.manual_seed(42)
+b = torch.randn(1, dtype=torch.float).to(device)
+w = torch.randn(1, dtype=torch.float).to(device)
+# and THEN set them as requiring gradients...
+b.requires_grad_()
+w.requires_grad_()
+print(b, w)
