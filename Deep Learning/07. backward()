@@ -1,0 +1,15 @@
+# Step 1 - Computes our model's predicted output - forward pass
+yhat = b + w * x_train_tensor
+
+# Step 2 - computes the loss
+# We are using ALL data points, so this is BATCH gradient 
+# descent. How wrong is our model? That's the error! 
+error = (yhat - y_train_tensor)
+# It is a regression, so it computes mean squared error (MSE)
+loss = (error ** 2).mean()
+
+# Step 3 - computes gradients for both "b" and "w" parameters
+# No more manual computation of gradients! 
+# b_grad = 2 * error.mean()
+# w_grad = 2 * (x_tensor * error).mean()   
+loss.backward()                           # 1)
