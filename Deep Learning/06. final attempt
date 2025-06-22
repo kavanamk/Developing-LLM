@@ -1,0 +1,14 @@
+import torch
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# FINAL
+# We can specify the device at the moment of creation
+# RECOMMENDED!
+
+# Step 0 - initializes parameters "b" and "w" randomly
+torch.manual_seed(42)
+b = torch.randn(1, requires_grad=True, \
+                dtype=torch.float, device=device)
+w = torch.randn(1, requires_grad=True, \
+                dtype=torch.float, device=device)
+print(b, w)
