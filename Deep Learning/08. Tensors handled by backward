@@ -1,0 +1,24 @@
+
+In our example, which tensors are going to be handled by the backward() method applied to the loss?
+
+We have set requires_grad=True to both b and w, so they are obviously included in the list. We use them both to compute yhat, so it will also make it to the list. Then we use yhat to compute the error, which is also added to the list. Hence, the following will be handled by the backward method:
+
+b
+w
+yhat
+error
+Do you see the pattern here? If a tensor in the list is used to compute another tensor, the latter will also be included in the list. Tracking these dependencies is exactly what the dynamic computation graph is doing, as we will see shortly.
+
+What about x_train_tensor and y_train_tensor? They are involved in the computation too, but we created them as “not” gradient-requiring tensors, so backward() does not care about them.
+
+# using requires_grad to check if the following tensor require gradients or not
+print(error.requires_grad, yhat.requires_grad, \
+      b.requires_grad, w.requires_grad)
+print(y_train_tensor.requires_grad, x_train_tensor.requires_grad)
+
+
+Output
+1.14s
+True True True True
+False False
+
