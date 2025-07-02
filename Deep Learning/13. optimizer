@@ -1,0 +1,47 @@
+# Sets learning rate - this is "eta" ~ the "n" like Greek letter
+lr = 0.1
+
+# Step 0 - initializes parameters "b" and "w" randomly
+torch.manual_seed(42)
+b = torch.randn(1, requires_grad=True, \
+                dtype=torch.float, device=device)
+w = torch.randn(1, requires_grad=True, \
+                dtype=torch.float, device=device)
+
+# Defines a SGD optimizer to update the parameters
+optimizer = optim.SGD([b, w], lr=lr)               # 1)
+
+# Defines number of epochs
+n_epochs = 1000
+
+for epoch in range(n_epochs):
+    # Step 1 - computes model's predicted output - forward pass
+    yhat = b + w * x_train_tensor
+    
+    # Step 2 - computes the loss
+    # We are using ALL data points, so this is BATCH gradient
+    # descent. How wrong is our model? That's the error! 
+    error = (yhat - y_train_tensor)
+    # It is a regression, so it computes mean squared error (MSE)
+    loss = (error ** 2).mean()
+
+    # Step 3 - computes gradients for both "b" and "w" parameters
+    loss.backward()
+    
+    # Step 4 - updates parameters using gradients and 
+    # the learning rate. No more manual update!
+    # with torch.no_grad():
+    #     b -= lr * b.grad
+    #     w -= lr * w.grad
+    optimizer.step()                               # 2)
+    
+    # No more telling Pytorch to let gradients go!
+    # b.grad.zero_()
+    # w.grad.zero_()
+    optimizer.zero_grad()                          # 3)
+    
+print(b, w)
+
+Output
+1.16s
+tensor([1.0235], requires_grad=True) tensor([1.9690], requires_grad=True)
