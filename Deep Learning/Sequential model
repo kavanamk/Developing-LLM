@@ -1,0 +1,9 @@
+import torch
+import torch.nn as nn
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+torch.manual_seed(42)
+# Building the model from the figure above
+model = nn.Sequential(nn.Linear(3, 5), nn.Linear(5, 1)).to(device)
+print(model.state_dict())
