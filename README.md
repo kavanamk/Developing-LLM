@@ -1,0 +1,1 @@
+This Git repo is your guide to building with Large Language Models (LLMs). It covers prompt engineering, vector databases for data retrieval, and LangChain for creating AI workflows. Enhance models with RAG, fine-tune them using LoRA/QLoRA, and build autonomous AI agents with CrewAI to automate complex tasks.
