@@ -1,0 +1,13 @@
+Credit Risk & Loan Profitability Modeling Pipeline
+
+This project builds a pipeline to predict loan default risk and estimate expected business profit using LendingClub loan data. It includes:
+
+Data Cleaning & Integration: Combined accepted and rejected loans, handled missing values, and reduced 30k+ loan purpose categories to 50 meaningful categories using TF-IDF clustering and OpenAI API.
+
+Feature Engineering: Encoded categorical features, normalized numeric features, and created new flags and interaction features (e.g., high DTI, long-term employment, loan × DTI).
+
+Modeling: Trained Logistic Regression, Random Forest, and XGBoost with hyperparameter tuning.
+
+Evaluation: Used k-fold cross-validation to assess performance with ROC-AUC, F1-score, and Expected Profit. Plotted ROC and profit curves for business insights.
+
+This pipeline enables both risk assessment and profit-driven decision-making for loan approvals.
